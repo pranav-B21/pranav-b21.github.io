@@ -272,8 +272,8 @@
 
         /* ── Papers ── */
         .paper-item {
-            margin-bottom: 1.6rem;
-            padding-bottom: 1.6rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
             border-bottom: 1px solid #f0f0f0;
         }
 
@@ -284,17 +284,23 @@
         }
 
         .paper-title {
-            font-size: 0.95rem;
+            font-size: 1.08rem;
             font-weight: 700;
             color: #111;
+            margin-bottom: 0.3rem;
+            line-height: 1.45;
+        }
+
+        .paper-venue-row {
+            font-size: 0.87rem;
+            color: #555;
             margin-bottom: 0.25rem;
-            line-height: 1.5;
         }
 
         .paper-authors {
             font-size: 0.85rem;
             color: #555;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.4rem;
         }
 
         .paper-authors .me {
@@ -302,21 +308,42 @@
             color: #333;
         }
 
-        .paper-venue {
-            font-size: 0.84rem;
-            color: #666;
-            font-style: italic;
-            margin-bottom: 0.5rem;
+        .paper-links {
+            display: flex;
+            gap: 0.35rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.55rem;
+        }
+
+        .paper-link-btn {
+            font-size: 0.78rem;
+            color: #2563eb;
+            text-decoration: none;
+            border: 1px solid #bfdbfe;
+            padding: 0.12rem 0.55rem;
+            border-radius: 3px;
+            background: #eff6ff;
+            transition: background 0.15s;
+        }
+
+        .paper-link-btn:hover {
+            background: #dbeafe;
+        }
+
+        .paper-abstract {
+            font-size: 0.87rem;
+            color: #555;
+            line-height: 1.7;
         }
 
         .paper-badge {
             display: inline-block;
-            padding: 0.18rem 0.65rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
+            padding: 0.14rem 0.55rem;
+            border-radius: 10px;
+            font-size: 0.74rem;
             font-weight: 700;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            vertical-align: middle;
         }
 
         .badge-inprogress {
@@ -413,8 +440,8 @@ nav ul {
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
             <li><a href="#papers">Papers</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
         </ul>
     </div>
@@ -460,7 +487,8 @@ nav ul {
             <span class="interest-tag">Reinforcement Learning</span>
             <span class="interest-tag">Frontier LLMs</span>
             <span class="interest-tag">Recommender Systems</span>
-            <span class="interest-tag">Retrieval-Augmented Generation</span>
+            <span class="interest-tag">Self-Driving</span>
+            <span class="interest-tag">Vision-Language-Action Models</span>
             <span class="interest-tag">Agentic AI</span>
             <span class="interest-tag">AGI</span>
             <span class="interest-tag">Machine Learning</span>
@@ -478,16 +506,21 @@ nav ul {
                 <h3>The University of Texas at Austin</h3>
                 <p class="degree">B.S. Statistics &amp; Data Science &amp; B.S. Mathematics (Double Degree)<br>
                 Minor in Computer Science</p>
-                <p class="date">Aug 2023 – May 2027 (expected)</p>
+                <p class="date">Aug 2024 – May 2027 (expected)</p>
             </div>
         </div>
 
-        <div class="edu-item">
-            <div class="edu-logo"><i class="fas fa-school"></i></div>
-            <div class="edu-body">
-                <h3>Monta Vista High School</h3>
-                <p class="degree">High School Diploma &nbsp;·&nbsp; Cupertino, CA</p>
-            </div>
+    </section>
+
+    <!-- ── Papers ── -->
+    <section id="papers">
+        <h2>Papers</h2>
+
+        <div class="paper-item">
+            <p class="paper-title">Integrating Collaborative and Meta-Information Retrieval with Reasoning: An End-to-End Framework for LLM-Based Recommendation</p>
+            <p class="paper-venue-row"><span class="paper-badge badge-inprogress">In Progress</span></p>
+            <p class="paper-authors">Shijun Li, Joydeep Ghosh, <span class="me">Pranav Belligundu</span></p>
+            <p class="paper-abstract">We propose an end-to-end framework for LLM-based recommendation that unifies collaborative filtering signals with meta-information retrieval and structured reasoning. Rather than treating retrieval and generation as separate stages, our approach enables the model to autonomously query user interaction histories and item metadata via retrieved-token masking, then apply chain-of-thought reasoning to produce grounded, explainable recommendations. Trained with PPO on large-scale datasets, the system learns to balance exploration of novel items with exploitation of known preferences, yielding improvements in both accuracy and recommendation diversity.</p>
         </div>
     </section>
 
@@ -497,8 +530,14 @@ nav ul {
 
         <div class="exp-item">
             <div class="exp-body">
-                <h3>Machine Learning Engineer Intern — Workday</h3>
-                <p class="exp-meta">Incoming Summer 2026 &nbsp;·&nbsp; Agentic AI &nbsp;·&nbsp; AI Accelerate Team</p>
+                <h3>Machine Learning Engineering Intern — Workday</h3>
+                <p class="exp-meta">Summer 2026 &nbsp;·&nbsp; Pleasanton, CA</p>
+                <ul class="bullet-list">
+                    <li>Contributing to Workday's Self-Service-Agent (SSA), an AI Agent that automates enterprise HR and finance tasks</li>
+                    <li>Designing evaluation pipelines with LangSmith to improve eval accuracy in multi-turn, tool-based agent behavior</li>
+                    <li>Collaborating with engineers and QA to standardize evaluation metrics and validate expected agent completions</li>
+                    <li>Building a feedback system to capture user ratings and corrections for iterative fine-tuning of agent responses</li>
+                </ul>
             </div>
         </div>
 
@@ -508,8 +547,9 @@ nav ul {
                 <p class="exp-meta">Sept 2025 – Present &nbsp;·&nbsp; Austin, TX</p>
                 <ul class="bullet-list">
                     <li>Research under Prof. Joydeep Ghosh and Shijun Li on goal-conditioned RL for personalized recommender systems</li>
-                    <li>Model trained with PPO and retrieved-token masking to autonomously query user histories and item metadata</li>
-                    <li>Ran large-scale CUDA experiments while fine-tuning parameters to improve accuracy and overall training quality</li>
+                    <li>Trained model with PPO and retrieved-token masking to autonomously query user histories and item metadata</li>
+                    <li>Running large-scale CUDA experiments, fine-tuning parameters to improve accuracy and overall training quality</li>
+                    <li>Implementing a reasoning-based reward system that scores token relevance to guide exploration during training</li>
                 </ul>
             </div>
         </div>
@@ -551,21 +591,17 @@ nav ul {
         </div>
     </section>
 
-    <!-- ── Papers ── -->
-    <section id="papers">
-        <h2>Papers</h2>
-
-        <div class="paper-item">
-            <p class="paper-title">Integrating Collaborative and Meta-Information Retrieval with Reasoning: An End-to-End Framework for LLM-Based Recommendation</p>
-            <p class="paper-authors">Shijun Li, Joydeep Ghosh, <span class="me">Pranav Belligundu</span></p>
-            <span class="paper-badge badge-inprogress">In Progress</span>
-        </div>
-    </section>
-
     <!-- ── Projects ── -->
     <section id="projects">
         <h2>Selected Projects</h2>
         <div class="projects-grid">
+
+            <div class="project-card">
+                <h3>VitaRize</h3>
+                <p>Accessibility app that summarizes articles with text-to-speech for visually impaired individuals. Marketed to 10+ users improving content accessibility.</p>
+                <p style="font-size:0.78rem;color:#888;margin-bottom:0.5rem;">Python · Streamlit · PyTorch · Googletrans</p>
+                <a href="https://github.com/pranav-B21/VitaRize" target="_blank"><i class="fas fa-external-link-alt"></i> View on GitHub</a>
+            </div>
 
             <div class="project-card">
                 <h3>Apanto</h3>
@@ -575,17 +611,10 @@ nav ul {
             </div>
 
             <div class="project-card">
-                <h3>VitaRize <span style="font-size:0.75rem;color:#16a34a;font-weight:400;">· 2nd / 160 at Cisco BridgeHacks</span></h3>
-                <p>Accessibility app that summarizes articles with text-to-speech for visually impaired individuals. Marketed to 10+ users improving content accessibility.</p>
-                <p style="font-size:0.78rem;color:#888;margin-bottom:0.5rem;">Python · Streamlit · PyTorch · Googletrans</p>
-                <a href="https://github.com/pranav-B21/VitaRize" target="_blank"><i class="fas fa-external-link-alt"></i> View on GitHub</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Medimatch</h3>
-                <p>ML model to predict and detect sicknesses based on patient markers using Decision Trees and Random Forest.</p>
-                <p style="font-size:0.78rem;color:#888;margin-bottom:0.5rem;">Python · Scikit-learn · Pandas</p>
-                <a href="https://github.com/texasluminescence/medimatch" target="_blank"><i class="fas fa-external-link-alt"></i> View on GitHub</a>
+                <h3>Recurse</h3>
+                <p>MCP server for Claude Code that analyzes large codebases without consuming token budget. Uses a recursive LLM approach with local Qwen models via Ollama to reason over millions of tokens.</p>
+                <p style="font-size:0.78rem;color:#888;margin-bottom:0.5rem;">Python · MCP · Ollama · Qwen</p>
+                <a href="https://github.com/pranav-B21/recurse" target="_blank"><i class="fas fa-external-link-alt"></i> View on GitHub</a>
             </div>
 
         </div>
