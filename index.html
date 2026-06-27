@@ -353,45 +353,65 @@
         }
 
         /* ── Projects ── */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.2rem;
+        .projects-list {
+            display: flex;
+            flex-direction: column;
         }
 
-        .project-card {
+        .project-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .project-thumb {
+            flex-shrink: 0;
+            width: 200px;
+        }
+
+        .project-thumb img {
+            width: 100%;
+            border-radius: 6px;
             border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 1.2rem;
-            transition: box-shadow 0.2s, border-color 0.2s;
+            display: block;
         }
 
-        .project-card:hover {
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            border-color: #93c5fd;
-        }
-
-        .project-card h3 {
-            font-size: 0.93rem;
+        .project-content h3 {
+            font-size: 1rem;
             font-weight: 700;
-            margin-bottom: 0.45rem;
+            margin-bottom: 0.4rem;
             color: #111;
         }
 
-        .project-card p {
-            font-size: 0.85rem;
+        .project-content p {
+            font-size: 0.87rem;
             color: #555;
-            line-height: 1.6;
-            margin-bottom: 0.7rem;
+            line-height: 1.65;
+            margin-bottom: 0.6rem;
         }
 
-        .project-card a {
+        .project-content .project-stack {
+            font-size: 0.78rem;
+            color: #888;
+            margin-bottom: 0.55rem;
+        }
+
+        .project-content a {
             font-size: 0.82rem;
             color: #2563eb;
             text-decoration: none;
         }
 
-        .project-card a:hover {
+        .project-content a:hover {
             text-decoration: underline;
         }
 
@@ -414,6 +434,15 @@
 
 nav ul {
                 gap: 1rem;
+            }
+
+            .project-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .project-thumb {
+                width: 100%;
             }
         }
 
@@ -594,27 +623,27 @@ nav ul {
     <!-- ── Projects ── -->
     <section id="projects">
         <h2>Selected Projects</h2>
-        <div class="projects-grid">
+        <div class="projects-list">
 
-            <div class="project-card">
-                <h3>VitaRize</h3>
-                <p>Accessibility app that summarizes articles with text-to-speech for visually impaired individuals. Marketed to 10+ users improving content accessibility.</p>
-                <p style="font-size:0.78rem;color:#888;margin-bottom:0.5rem;">Python · Streamlit · PyTorch · Googletrans</p>
-                <a href="https://github.com/pranav-B21/VitaRize" target="_blank"><i class="fas fa-external-link-alt"></i> View on GitHub</a>
+            <div class="project-item">
+                <div class="project-thumb">
+                    <img src="recurs_ss.png" alt="Recurse" />
+                </div>
+                <div class="project-content">
+                    <h3>Recurse</h3>
+                    <p>MCP server for Claude Code that analyzes large codebases without consuming token budget. Uses a recursive LLM approach with local Qwen models via Ollama to reason over millions of tokens.</p>
+                    <p class="project-stack">Python · MCP · Ollama · Qwen</p>
+                    <a href="https://github.com/pranav-B21/recurse" target="_blank"><i class="fas fa-external-link-alt"></i> View on GitHub</a>
+                </div>
             </div>
 
-            <div class="project-card">
-                <h3>Apanto</h3>
-                <p>LLM router that intelligently routes prompts across commercial APIs and Hugging Face models. Full-stack app (React + FastAPI) tracking latency, cost, and usage across 20+ models.</p>
-                <p style="font-size:0.78rem;color:#888;margin-bottom:0.5rem;">Python · React · FastAPI · PostgreSQL · MongoDB · vLLM · CUDA</p>
-                <a href="https://github.com/pranav-B21/Apanto" target="_blank"><i class="fas fa-external-link-alt"></i> View on GitHub</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Recurse</h3>
-                <p>MCP server for Claude Code that analyzes large codebases without consuming token budget. Uses a recursive LLM approach with local Qwen models via Ollama to reason over millions of tokens.</p>
-                <p style="font-size:0.78rem;color:#888;margin-bottom:0.5rem;">Python · MCP · Ollama · Qwen</p>
-                <a href="https://github.com/pranav-B21/recurse" target="_blank"><i class="fas fa-external-link-alt"></i> View on GitHub</a>
+            <div class="project-item">
+                <div class="project-content">
+                    <h3>Apanto</h3>
+                    <p>LLM router that intelligently routes prompts across commercial APIs and Hugging Face models. Full-stack app (React + FastAPI) tracking latency, cost, and usage across 20+ models.</p>
+                    <p class="project-stack">Python · React · FastAPI · PostgreSQL · MongoDB · vLLM · CUDA</p>
+                    <a href="https://github.com/pranav-B21/Apanto" target="_blank"><i class="fas fa-external-link-alt"></i> View on GitHub</a>
+                </div>
             </div>
 
         </div>
