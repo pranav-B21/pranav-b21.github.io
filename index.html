@@ -361,7 +361,7 @@
         .project-item {
             display: flex;
             gap: 1.5rem;
-            align-items: flex-start;
+            align-items: center;
             margin-bottom: 2rem;
             padding-bottom: 2rem;
             border-bottom: 1px solid #f0f0f0;
@@ -631,17 +631,20 @@ nav ul {
                 </div>
                 <div class="project-content">
                     <h3>Recurse</h3>
-                    <p>MCP server for Claude Code that analyzes large codebases without consuming token budget. Uses a recursive LLM approach with local Qwen models via Ollama to reason over millions of tokens.</p>
-                    <p class="project-stack">Python · MCP · Ollama · Qwen</p>
+                    <p>An MCP server for Claude Code that analyzes massive codebases without consuming the agent's token budget. Recurse implements a Recursive Language Model (RLM) pattern: it offloads queries to a local Qwen model running through Ollama, which recursively decomposes the question, walks the repository, and reasons over millions of tokens before returning a single distilled answer to Claude. This keeps the primary context window free while still grounding responses in the full codebase, and supports configurable backends, recursion depth, and iteration limits so the depth of analysis can be tuned per query.</p>
+                    <p class="project-stack">Python · MCP (Model Context Protocol) · Ollama · Qwen 3.5 · OpenAI API · Recursive LLM</p>
                     <a href="https://github.com/pranav-B21/recurse" target="_blank"><i class="fas fa-external-link-alt"></i> View on GitHub</a>
                 </div>
             </div>
 
             <div class="project-item">
+                <div class="project-thumb">
+                    <img src="apanto_ss.png" alt="Apanto" />
+                </div>
                 <div class="project-content">
                     <h3>Apanto</h3>
-                    <p>LLM router that intelligently routes prompts across commercial APIs and Hugging Face models. Full-stack app (React + FastAPI) tracking latency, cost, and usage across 20+ models.</p>
-                    <p class="project-stack">Python · React · FastAPI · PostgreSQL · MongoDB · vLLM · CUDA</p>
+                    <p>An intelligent AI model router that automatically selects the best model for each prompt based on task type and a chosen priority — accuracy, speed, or cost. Apanto classifies the incoming prompt, scores candidate models, and routes across OpenAI, Anthropic, Google Gemini, DeepSeek, and Groq (Llama), while also letting users self-host their own Hugging Face models alongside the premium APIs. The full-stack app pairs a React + TypeScript frontend (Vite, shadcn/ui, Tailwind) with a FastAPI backend, surfacing real-time analytics on latency, cost, and usage, plus AI-powered prompt enhancement, all backed by a Supabase/PostgreSQL store for model scoring and metadata.</p>
+                    <p class="project-stack">React 18 · TypeScript · Vite · Tailwind CSS · shadcn/ui · React Query · FastAPI · Python · Pydantic · PostgreSQL (Supabase) · Hugging Face Transformers · PyTorch · CUDA · OpenAI / Anthropic / Gemini / DeepSeek / Groq APIs</p>
                     <a href="https://github.com/pranav-B21/Apanto" target="_blank"><i class="fas fa-external-link-alt"></i> View on GitHub</a>
                 </div>
             </div>
