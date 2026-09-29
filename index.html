@@ -346,6 +346,12 @@
             vertical-align: middle;
         }
 
+        .badge-preprint {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+        }
+
         .badge-inprogress {
             background: #fef9c3;
             color: #854d0e;
@@ -492,7 +498,7 @@ nav ul {
                 <a href="mailto:pranav.belligundu@utexas.edu">
                     <i class="fas fa-envelope"></i> Email
                 </a>
-                <a href="Pranav_Belligundu_Resume copy.pdf" target="_blank">
+                <a href="Pranav_Belligundu_Resume_ML.pdf" target="_blank">
                     <i class="fas fa-file-alt"></i> Resume / CV
                 </a>
             </div>
@@ -503,7 +509,7 @@ nav ul {
             <p class="institution">The University of Texas at Austin &nbsp;·&nbsp; Austin, TX</p>
 
             <p class="profile-bio">
-                I'm an undergraduate researcher at UT Austin pursuing a double degree in Statistics &amp; Data Science and Mathematics with a Minor in Computer Science. My research, conducted at the IDEAL Lab under Prof. Joydeep Ghosh, focuses on goal-conditioned reinforcement learning for personalized recommender systems. More broadly, I am interested in contributing to frontier ML/AI — spanning physical intelligence, reinforcement learning, and large language models. I've worked across academic research and industry in ML engineering and software development. Outside of work, I enjoy sports (volleyball and soccer), thrifting, and cooking. I also love films (<a href="https://letterboxd.com/pranavb21/" target="_blank" style="color:#2563eb;text-decoration:none;">Letterboxd</a>) and shoot film photography (<a href="https://www.instagram.com/belli.cam/" target="_blank" style="color:#2563eb;text-decoration:none;">@belli.cam</a>).
+                I'm an undergraduate researcher at UT Austin pursuing a double degree in Statistics &amp; Data Science and Mathematics with a Minor in Computer Science. My research, conducted at the IDEAL Lab under Prof. Joydeep Ghosh, focuses on reinforcement-learning-trained LLM recommenders that learn when and what evidence to retrieve. More broadly, I am interested in contributing to frontier ML/AI — spanning physical intelligence, reinforcement learning, and large language models. I've worked across academic research and industry in ML engineering and software development. Outside of work, I enjoy sports (volleyball and soccer), thrifting, and cooking. I also love films (<a href="https://letterboxd.com/pranavb21/" target="_blank" style="color:#2563eb;text-decoration:none;">Letterboxd</a>) and shoot film photography (<a href="https://www.instagram.com/belli.cam/" target="_blank" style="color:#2563eb;text-decoration:none;">@belli.cam</a>).
             </p>
         </div>
     </div>
@@ -535,7 +541,7 @@ nav ul {
                 <h3>The University of Texas at Austin</h3>
                 <p class="degree">B.S. Statistics &amp; Data Science &amp; B.S. Mathematics (Double Degree)<br>
                 Minor in Computer Science</p>
-                <p class="date">Aug 2024 – May 2027 (expected)</p>
+                <p class="date">Aug 2024 – May 2028</p>
             </div>
         </div>
 
@@ -546,10 +552,10 @@ nav ul {
         <h2>Papers</h2>
 
         <div class="paper-item">
-            <p class="paper-title">Integrating Collaborative and Meta-Information Retrieval with Reasoning: An End-to-End Framework for LLM-Based Recommendation</p>
-            <p class="paper-venue-row"><span class="paper-badge badge-inprogress">In Progress</span></p>
-            <p class="paper-authors">Shijun Li, Joydeep Ghosh, <span class="me">Pranav Belligundu</span></p>
-            <p class="paper-abstract">We propose an end-to-end framework for LLM-based recommendation that unifies collaborative filtering signals with meta-information retrieval and structured reasoning. Rather than treating retrieval and generation as separate stages, our approach enables the model to autonomously query user interaction histories and item metadata via retrieved-token masking, then apply chain-of-thought reasoning to produce grounded, explainable recommendations. Trained with PPO on large-scale datasets, the system learns to balance exploration of novel items with exploitation of known preferences, yielding improvements in both accuracy and recommendation diversity.</p>
+            <p class="paper-title"><a href="https://arxiv.org/abs/2605.07129" target="_blank" style="color:inherit;text-decoration:none;">RRCM: Ranking-Driven Retrieval over Collaborative and Meta Memories for LLM Recommendation</a></p>
+            <p class="paper-venue-row"><span class="paper-badge badge-preprint">arXiv Preprint</span> &nbsp;<a href="https://arxiv.org/abs/2605.07129" target="_blank" style="color:#2563eb;text-decoration:none;">arXiv:2605.07129</a> [cs.IR], 2026</p>
+            <p class="paper-authors">Shijun Li, <span class="me">Pranav Belligundu</span>, Tianxin Wei, Wooseong Yang, Yu Wang, Joydeep Ghosh</p>
+            <p class="paper-abstract">LLM-based recommenders struggle to build decision-relevant context from heterogeneous evidence: fixed prompts and static retrieval pipelines make it hard to know what information helps each instance, and rich metadata and interaction records quickly overwhelm the context window. RRCM is a ranking-driven retrieval-and-reasoning framework over collaborative and metadata memories for agentic recommendation. Starting from a lightweight user-history context, the model learns whether to recommend directly, retrieve collaborative evidence, retrieve item metadata, or interleave both through reasoning, with both memories accessed through a unified natural-language retrieval interface. The memory-reading policy is optimized with an outcome-only ranking reward via group relative policy optimization (GRPO), so retrieval decisions are driven directly by final top-k recommendation quality. RRCM significantly outperforms traditional baselines and diverse LLM-based recommendation approaches.</p>
         </div>
     </section>
 
@@ -560,12 +566,12 @@ nav ul {
         <div class="exp-item">
             <div class="exp-body">
                 <h3>Machine Learning Engineering Intern — Workday</h3>
-                <p class="exp-meta">Summer 2026 &nbsp;·&nbsp; Pleasanton, CA</p>
+                <p class="exp-meta">May 2026 – Aug 2026 &nbsp;·&nbsp; Pleasanton, CA</p>
                 <ul class="bullet-list">
-                    <li>Contributing to Workday's Self-Service-Agent (SSA), an AI Agent that automates enterprise HR and finance tasks</li>
-                    <li>Designing evaluation pipelines with LangSmith to improve eval accuracy in multi-turn, tool-based agent behavior</li>
-                    <li>Collaborating with engineers and QA to standardize evaluation metrics and validate expected agent completions</li>
-                    <li>Building a feedback system to capture user ratings and corrections for iterative fine-tuning of agent responses</li>
+                    <li>Engineered features for Workday's Self-Service Agent that uses 60+ tools to answer questions and execute workflows</li>
+                    <li>Standardized ~250 LangChain evaluations, boosting agent completion to 92% by fixing tool-selection and node errors</li>
+                    <li>Designed a LangGraph recommendation system to generate clickable follow-ups, used 8.6K times per month by clients</li>
+                    <li>Built a parallel fan-out/fan-in node architecture, overlapping a 1.25s LLM call to meet production p95 latency target</li>
                 </ul>
             </div>
         </div>
@@ -575,10 +581,10 @@ nav ul {
                 <h3>Machine Learning Undergraduate Researcher — UT Austin IDEAL Lab</h3>
                 <p class="exp-meta">Sept 2025 – Present &nbsp;·&nbsp; Austin, TX</p>
                 <ul class="bullet-list">
-                    <li>Research under Prof. Joydeep Ghosh and Shijun Li on goal-conditioned RL for personalized recommender systems</li>
-                    <li>Trained model with PPO and retrieved-token masking to autonomously query user histories and item metadata</li>
-                    <li>Running large-scale CUDA experiments, fine-tuning parameters to improve accuracy and overall training quality</li>
-                    <li>Implementing a reasoning-based reward system that scores token relevance to guide exploration during training</li>
+                    <li>Research under Prof. Joydeep Ghosh and Shijun Li on RL-trained LLM recommenders with adaptive evidence retrieval</li>
+                    <li>Co-authored <a href="#papers" style="color:#2563eb;text-decoration:none;">RRCM</a>, which trains Qwen3-1.7B with GRPO to decide whether to query user histories or item metadata</li>
+                    <li>Designed 8 reward systems for Qwen3-1.7B, raising relevant recommendations from 16.6% to 27.3% over baseline</li>
+                    <li>Ran verl with Slurm on TACC, tuning group size, batch size, and gradient accumulation for rollout throughput</li>
                 </ul>
             </div>
         </div>
@@ -590,7 +596,7 @@ nav ul {
                 <ul class="bullet-list">
                     <li>Developed and deployed integration tests across 10+ microservices for an AI-powered invoice processing platform</li>
                     <li>Automated REST API validation with Postman, verifying 100+ document payloads, cutting QA time by 60%</li>
-                    <li>Reduced release rollbacks 20% through GitLab CI/CD pipeline optimizations that improved deployment reliability</li>
+                    <li>Reduced release rollbacks 20% through Git CI/CD pipeline optimizations that improved deployment reliability</li>
                 </ul>
             </div>
         </div>
